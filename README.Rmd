@@ -1,0 +1,113 @@
+# run_analysis.R
+
+Takes data collected from accelerometers of the Samsung Galaxy S smartphone
+and creates two tidy data sets:
+
+* One raw data, `final.csv`, set containing all mean and standard deviation measurements
+* One data set, `averages.csv`, containing means of all other values, grouped by subject ID.
+
+The description of the original data can be found at: http://bit.ly/1mEvWTG
+
+The original data can be found at: http://bit.ly/1p1sdWC
+
+# Background of accelerometer measurements:
+
+The accelerometer is a built-in component for measuring the acceleration of any
+mobile device. Motions like swinging, tilting, rotating, shaking is detected
+using accelerometer. The value of XYZ is used to calculate and detect the
+motions. Besides mobile, the accelerometer is used to measure vibration on cars,
+machines, buildings, process control systems and safety installations.
+
+## final.csv columns:
+
+* Time measurements - Duration measurements:
++ Body acceleration - In classical mechanics, for a body with constant mass, the (vector) acceleration of the body's center of mass is proportional to the net force vector (i.e., sum of all forces) acting on it (Newton's second law):
+- `timebodyaccelerationmeanxaxis`: X-axis measurements.
+- `timebodyaccelerationmeanyaxis`: Y-axis measurements.
+- `timebodyaccelerationmeanzaxis`: Z-axis measurements.
+- `timebodyaccelerationstandarddeviationxaxis`: X-axis standard deviation.
+- `timebodyaccelerationstandarddeviationyaxis`: Y-axis standard deviation.
+- `timebodyaccelerationstandarddeviationzaxis`: Z-axis standard deviation.
+- `timebodyaccelerationmagnitudemean`: Mean of the magnitude of the movement.
+- `timebodyaccelerationmagnitudestandarddeviation`: Standard deviation of the magnitude of the movement.
++ Gravity acceleration - In physics, gravitational acceleration is the acceleration on an object caused by force of gravitation:
+- `timeGravityaccelerationmeanxaxis`: X-axis measurements.
+- `timeGravityaccelerationmeanyaxis`: Y-axis measurements.
+- `timeGravityaccelerationmeanzaxis`: Z-axis measurements.
+- `timeGravityaccelerationstandarddeviationxaxis`: X-axis standard deviation.
+- `timeGravityaccelerationstandarddeviationyaxis`: Y-axis standard deviation.
+- `timeGravityaccelerationstandarddeviationzaxis`: Z-axis standard deviation.
+- `timeGravityaccelerationmagnitudemean`: Mean of the magnitude of the movement.
+- `timeGravityaccelerationmagnitudestandarddeviation`: Standard deviation of the magnitude of the movement.
++ Jerk acceleration - In physics, jerk, also known as jolt, surge, or lurch, is the rate of change of acceleration:
+- `timebodyaccelerationjerkmeanxaxis`: X-axis measurements.
+- `timebodyaccelerationjerkmeanyaxis`: Y-axis measurements.
+- `timebodyaccelerationjerkmeanzaxis`: Z-axis measurements.
+- `timebodyaccelerationjerkstandarddeviationxaxis`: X-axis standard deviation.
+- `timebodyaccelerationjerkstandarddeviationyaxis`: Y-axis standard deviation.
+- `timebodyaccelerationjerkstandarddeviationzaxis`: Z-axis standard deviation.
+- `timebodyaccelerationjerkmagnitudemean`: Mean of the magnitude of the movement.
+- `timebodyaccelerationjerkmagnitudestandarddeviation`: Standard deviation of the magnitude of the movement.
++ Gyroscope - Orientation of the gyroscope as other actions are performed:
+- `timebodygyroscopemeanxaxis`: X-axis measurements.
+- `timebodygyroscopemeanyaxis`: Y-axis measurements.
+- `timebodygyroscopemeanzaxis`: Z-axis measurements.
+- `timebodygyroscopestandarddeviationxaxis`: X-axis standard deviation.
+- `timebodygyroscopestandarddeviationyaxis`: Y-axis standard deviation.
+- `timebodygyroscopestandarddeviationzaxis`: Z-axis standard deviation.
+- `timebodygyroscopemagnitudemean`: Mean of the magnitude of the movement.
+- `timebodygyroscopemagnitudestandarddeviation`: Standard deviation of the magnitude of the movement.
++ Gyroscope jerk - Jerk, as defined above, relative to the orientation of the gyroscope:
+- `timebodygyroscopejerkmeanxaxis`: X-axis measurements.
+- `timebodygyroscopejerkmeanyaxis`: Y-axis measurements.
+- `timebodygyroscopejerkmeanzaxis`: Z-axis measurements.
+- `timebodygyroscopejerkstandarddeviationxaxis`: X-axis standard deviation.
+- `timebodygyroscopejerkstandarddeviationyaxis`: Y-axis standard deviation.
+- `timebodygyroscopejerkstandarddeviationzaxis`: Z-axis standard deviation.
+- `timebodygyroscopejerkmagnitudemean`: Mean of the magnitude of the movement.
+- `timebodygyroscopejerkmagnitudestandarddeviation`: Standard deviation of the magnitude of the movement.
+* Frequency measurements - Measurements of 50 Hertz:
++ Body acceleration - In classical mechanics, for a body with constant mass, the (vector) acceleration of the body's center of mass is proportional to the net force vector (i.e., sum of all forces) acting on it (Newton's second law):
+- `frequencybodyaccelerationmeanxaxis`: X-axis measurements.
+- `frequencybodyaccelerationmeanyaxis`: Y-axis measurements.
+- `frequencybodyaccelerationmeanzaxis`: Z-axis measurements.
+- `frequencybodyaccelerationstandarddeviationxaxis`: X-axis standard deviation.
+- `frequencybodyaccelerationstandarddeviationyaxis`: Y-axis standard deviation.
+- `frequencybodyaccelerationstandarddeviationzaxis`: Z-axis standard deviation.
+- `frequencybodyaccelerationweightedfrequencyaveragexaxis`: X-axis weighted average.
+- `frequencybodyaccelerationweightedfrequencyaverageyaxis`: Y-axis weighted average.
+- `frequencybodyaccelerationweightedfrequencyaveragezaxis`: Z-axis weighted average.
++ Body acceleration jerk mean - Jerk, as defined above, as relation to body acceleration, as defined above:
+- `frequencybodyaccelerationjerkmeanxaxis`: X-axis measurements.
+- `frequencybodyaccelerationjerkmeanyaxis`: Y-axis measurements.
+- `frequencybodyaccelerationjerkmeanzaxis`: Z-axis measurements.
+- `frequencybodyaccelerationjerkstandarddeviationxaxis`: X-axis standard deviation.
+- `frequencybodyaccelerationjerkstandarddeviationyaxis`: Y-axis standard deviation.
+- `frequencybodyaccelerationjerkstandarddeviationzaxis`: Z-axis standard deviation.
+- `frequencybodyaccelerationjerkweightedfrequencyaveragexaxis`: X-axis weighted average.
+- `frequencybodyaccelerationjerkweightedfrequencyaverageyaxis`: Y-axis weighted average.
+- `frequencybodyaccelerationjerkweightedfrequencyaveragezaxis`: Z-axis weighted average.
++ Body gyroscope - The relation of body movement to the gyroscope position.:
+- `frequencybodygyroscopemeanxaxis`: X-axis measurements.
+- `frequencybodygyroscopemeanyaxis`: Y-axis measurements.
+- `frequencybodygyroscopemeanzaxis`: Z-axis measurements.
+- `frequencybodygyroscopestandarddeviationxaxis`: X-axis standard deviation.
+- `frequencybodygyroscopestandarddeviationyaxis`: Y-axis standard deviation.
+- `frequencybodygyroscopestandarddeviationzaxis`: Z-axis standard deviation.
+- `frequencybodygyroscopeweightedfrequencyaveragexaxis`: X-axis measurements.
+- `frequencybodygyroscopeweightedfrequencyaverageyaxis`: Y-axis measurements.
+- `frequencybodygyroscopeweightedfrequencyaveragezaxis`: Z-axis measurements.
++ Body acceleration - Body acceleration, as defined above:
+- `frequencybodyaccelerationmagnitudemean`: Mean of acceleration magnitude.
+- `frequencybodyaccelerationmagnitudestandarddeviation`: Standard deviation of acceleration magnitude.
+- `frequencybodyaccelerationmagnitudeweightedfrequencyaverage`: Average weighted frequency.
+- `frequencybodybodyaccelerationjerkmagnitudemean`: Mean of jerk magnitude.
+- `frequencybodybodyaccelerationjerkmagnitudestandarddeviation`: Standard deviation of jerk magnitude.
+- `frequencybodybodyaccelerationjerkmagnitudeweightedfrequencyaverage`: Weighted average of jerk magnitude.
++ Body gyroscope magnitude - The magnitude of the body movement in relation to the gyroscope:
+- `frequencybodybodygyroscopemagnitudemean`: Mean magnitude.
+- `frequencybodybodygyroscopemagnitudestandarddeviation`: Standard deviation of magnitude.
+- `frequencybodybodygyroscopemagnitudeweightedfrequencyaverage`: Weighted average.
+- `frequencybodybodygyroscopejerkmagnitudemean`: Mean jerk magnitude.
+- `frequencybodybodygyroscopejerkmagnitudestandarddeviation`: Standardard deviation of jerk.
+
