@@ -18,6 +18,35 @@ using accelerometer. The value of XYZ is used to calculate and detect the
 motions. Besides mobile, the accelerometer is used to measure vibration on cars,
 machines, buildings, process control systems and safety installations.
 
+# Running run_analysis.R
+
+To run the program, expand the original data zipfile, obtained at
+http://bit.ly/1p1sdWC in the folder containing 'run_analysis.R'. A folder named
+'UCI HAR Dataset' will be created. This folder contains all of the data that 
+'run_analysis.R' needs to create its composite and summary data files.
+
+'run_analysis.R' works as follows:
+
+* Creates a data frame from the data in 'UCI HAR Dataset/test/y_test.txt'
+* Creates a data frame from the data in 'UCI HAR Dataset/test/subject_test.txt'
+* Creates a data frame from the data in 'UCI HAR Dataset/test/x_test.txt'
+* Merges these three data frames into a 'test' data frame.
+* Creates a data frame from the data in 'UCI HAR Dataset/train/y_train.txt'
+* Creates a data frame from the data in 'UCI HAR Dataset/train/subject_train.txt'
+* Creates a data frame from the data in 'UCI HAR Dataset/train/x_train.txt'
+* Merges these three data frames into a 'train' data frame.
+* Merges the 'test' and 'train' data frames into a 'composite' data frame.
+* Reads the 'UCI HAR Dataset/features.txt' to create a list of all column names.
+* Adds 'activityid' and 'subjectid' to the list of column names.
+* Creates a boolean list of all column names containing '-(mean)' or '-(std)' suffixes.
+* Uses this boolean list to remove all unneeded columns.
+* Reads 'UCI HAR Dataset/activity_labels.txt' to create a list of human-readable activities.
+* Adds a column to the final data frame to insert the appropriate activity label for each observation.
+* Creates tidy column names for the final data frame and changes the column names to these new tidy names.
+* Writes the final data set to a comma-separated file, 'final.csv'.
+* Averages all final data set observations, grouped by 'subjectid'.
+* Writes the resulting data set to 'averages.csv'.
+
 ## final.csv columns:
 
 * Time measurements - Duration measurements:
