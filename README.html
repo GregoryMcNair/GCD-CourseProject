@@ -74,99 +74,130 @@ img {
 <div id="background-of-accelerometer-measurements" class="section level1">
 <h1>Background of accelerometer measurements:</h1>
 <p>The accelerometer is a built-in component for measuring the acceleration of any mobile device. Motions like swinging, tilting, rotating, shaking is detected using accelerometer. The value of XYZ is used to calculate and detect the motions. Besides mobile, the accelerometer is used to measure vibration on cars, machines, buildings, process control systems and safety installations.</p>
+</div>
+<div id="running-run_analysis.r" class="section level1">
+<h1>Running run_analysis.R</h1>
+<p>To run the program, expand the original data zipfile, obtained at <a href="http://bit.ly/1p1sdWC" class="uri">http://bit.ly/1p1sdWC</a> in the folder containing ‘run_analysis.R’. A folder named ‘UCI HAR Dataset’ will be created. This folder contains all of the data that ‘run_analysis.R’ needs to create its composite and summary data files.</p>
+<p>‘run_analysis.R’ works as follows:</p>
+<ul>
+<li>Creates a data frame from the data in ‘UCI HAR Dataset/test/y_test.txt’</li>
+<li>Creates a data frame from the data in ‘UCI HAR Dataset/test/subject_test.txt’</li>
+<li>Creates a data frame from the data in ‘UCI HAR Dataset/test/x_test.txt’</li>
+<li>Merges these three data frames into a ‘test’ data frame.</li>
+<li>Creates a data frame from the data in ‘UCI HAR Dataset/train/y_train.txt’</li>
+<li>Creates a data frame from the data in ‘UCI HAR Dataset/train/subject_train.txt’</li>
+<li>Creates a data frame from the data in ‘UCI HAR Dataset/train/x_train.txt’</li>
+<li>Merges these three data frames into a ‘train’ data frame.</li>
+<li>Merges the ‘test’ and ‘train’ data frames into a ‘composite’ data frame.</li>
+<li>Reads the ‘UCI HAR Dataset/features.txt’ to create a list of all column names.</li>
+<li>Adds ‘activityid’ and ‘subjectid’ to the list of column names.</li>
+<li>Creates a boolean list of all column names containing ‘-(mean)’ or ‘-(std)’ suffixes.</li>
+<li>Uses this boolean list to remove all unneeded columns.</li>
+<li>Reads ‘UCI HAR Dataset/activity_labels.txt’ to create a list of human-readable activities.</li>
+<li>Adds a column to the final data frame to insert the appropriate activity label for each observation.</li>
+<li>Creates tidy column names for the final data frame and changes the column names to these new tidy names.</li>
+<li>Writes the final data set to a comma-separated file, ‘final.csv’.</li>
+<li>Averages all final data set observations, grouped by ‘subjectid’.</li>
+<li>Writes the resulting data set to ‘averages.csv’.</li>
+</ul>
 <div id="final.csv-columns" class="section level2">
 <h2>final.csv columns:</h2>
+<p>Andriod accelerometer events are in units of meters per second squared (m/s^2).</p>
 <ul>
 <li>Time measurements - Duration measurements:</li>
 <li>Body acceleration - In classical mechanics, for a body with constant mass, the (vector) acceleration of the body’s center of mass is proportional to the net force vector (i.e., sum of all forces) acting on it (Newton’s second law):</li>
-<li><code>timebodyaccelerationmeanxaxis</code>: X-axis measurements.</li>
-<li><code>timebodyaccelerationmeanyaxis</code>: Y-axis measurements.</li>
-<li><code>timebodyaccelerationmeanzaxis</code>: Z-axis measurements.</li>
-<li><code>timebodyaccelerationstandarddeviationxaxis</code>: X-axis standard deviation.</li>
-<li><code>timebodyaccelerationstandarddeviationyaxis</code>: Y-axis standard deviation.</li>
-<li><code>timebodyaccelerationstandarddeviationzaxis</code>: Z-axis standard deviation.</li>
-<li><code>timebodyaccelerationmagnitudemean</code>: Mean of the magnitude of the movement.</li>
-<li><code>timebodyaccelerationmagnitudestandarddeviation</code>: Standard deviation of the magnitude of the movement.</li>
+<li><code>timebodyaccelerationmeanxaxis</code>: X-axis measurements in m/s^2.</li>
+<li><code>timebodyaccelerationmeanyaxis</code>: Y-axis measurements in m/s^2.</li>
+<li><code>timebodyaccelerationmeanzaxis</code>: Z-axis measurements in m/s^2.</li>
+<li><code>timebodyaccelerationstandarddeviationxaxis</code>: X-axis standard deviation in m/s^2.</li>
+<li><code>timebodyaccelerationstandarddeviationyaxis</code>: Y-axis standard deviation in m/s^2.</li>
+<li><code>timebodyaccelerationstandarddeviationzaxis</code>: Z-axis standard deviation in m/s^2.</li>
+<li><code>timebodyaccelerationmagnitudemean</code>: Mean of the magnitude of the movement in m/s^2.</li>
+<li><code>timebodyaccelerationmagnitudestandarddeviation</code>: Standard deviation of the magnitude of the movement in m/s^2.</li>
 <li>Gravity acceleration - In physics, gravitational acceleration is the acceleration on an object caused by force of gravitation:</li>
-<li><code>timeGravityaccelerationmeanxaxis</code>: X-axis measurements.</li>
-<li><code>timeGravityaccelerationmeanyaxis</code>: Y-axis measurements.</li>
-<li><code>timeGravityaccelerationmeanzaxis</code>: Z-axis measurements.</li>
-<li><code>timeGravityaccelerationstandarddeviationxaxis</code>: X-axis standard deviation.</li>
-<li><code>timeGravityaccelerationstandarddeviationyaxis</code>: Y-axis standard deviation.</li>
-<li><code>timeGravityaccelerationstandarddeviationzaxis</code>: Z-axis standard deviation.</li>
-<li><code>timeGravityaccelerationmagnitudemean</code>: Mean of the magnitude of the movement.</li>
-<li><code>timeGravityaccelerationmagnitudestandarddeviation</code>: Standard deviation of the magnitude of the movement.</li>
+<li><code>timeGravityaccelerationmeanxaxis</code>: X-axis measurements in m/s^2.</li>
+<li><code>timeGravityaccelerationmeanyaxis</code>: Y-axis measurements in m/s^2.</li>
+<li><code>timeGravityaccelerationmeanzaxis</code>: Z-axis measurements in m/s^2.</li>
+<li><code>timeGravityaccelerationstandarddeviationxaxis</code>: X-axis standard deviation in m/s^2.</li>
+<li><code>timeGravityaccelerationstandarddeviationyaxis</code>: Y-axis standard deviation in m/s^2.</li>
+<li><code>timeGravityaccelerationstandarddeviationzaxis</code>: Z-axis standard deviation in m/s^2.</li>
+<li><code>timeGravityaccelerationmagnitudemean</code>: Mean of the magnitude of the movement in m/s^2.</li>
+<li><code>timeGravityaccelerationmagnitudestandarddeviation</code>: Standard deviation of the magnitude of the movement in m/s^2.</li>
 <li>Jerk acceleration - In physics, jerk, also known as jolt, surge, or lurch, is the rate of change of acceleration:</li>
-<li><code>timebodyaccelerationjerkmeanxaxis</code>: X-axis measurements.</li>
-<li><code>timebodyaccelerationjerkmeanyaxis</code>: Y-axis measurements.</li>
-<li><code>timebodyaccelerationjerkmeanzaxis</code>: Z-axis measurements.</li>
-<li><code>timebodyaccelerationjerkstandarddeviationxaxis</code>: X-axis standard deviation.</li>
-<li><code>timebodyaccelerationjerkstandarddeviationyaxis</code>: Y-axis standard deviation.</li>
-<li><code>timebodyaccelerationjerkstandarddeviationzaxis</code>: Z-axis standard deviation.</li>
-<li><code>timebodyaccelerationjerkmagnitudemean</code>: Mean of the magnitude of the movement.</li>
-<li><code>timebodyaccelerationjerkmagnitudestandarddeviation</code>: Standard deviation of the magnitude of the movement.</li>
+<li><code>timebodyaccelerationjerkmeanxaxis</code>: X-axis measurements in m/s^2.</li>
+<li><code>timebodyaccelerationjerkmeanyaxis</code>: Y-axis measurements in m/s^2.</li>
+<li><code>timebodyaccelerationjerkmeanzaxis</code>: Z-axis measurements in m/s^2.</li>
+<li><code>timebodyaccelerationjerkstandarddeviationxaxis</code>: X-axis standard deviation in m/s^2.</li>
+<li><code>timebodyaccelerationjerkstandarddeviationyaxis</code>: Y-axis standard deviation in m/s^2.</li>
+<li><code>timebodyaccelerationjerkstandarddeviationzaxis</code>: Z-axis standard deviation in m/s^2.</li>
+<li><code>timebodyaccelerationjerkmagnitudemean</code>: Mean of the magnitude of the movement in m/s^2.</li>
+<li><code>timebodyaccelerationjerkmagnitudestandarddeviation</code>: Standard deviation of the magnitude of the movement in m/s^2.</li>
 <li>Gyroscope - Orientation of the gyroscope as other actions are performed:</li>
-<li><code>timebodygyroscopemeanxaxis</code>: X-axis measurements.</li>
-<li><code>timebodygyroscopemeanyaxis</code>: Y-axis measurements.</li>
-<li><code>timebodygyroscopemeanzaxis</code>: Z-axis measurements.</li>
-<li><code>timebodygyroscopestandarddeviationxaxis</code>: X-axis standard deviation.</li>
-<li><code>timebodygyroscopestandarddeviationyaxis</code>: Y-axis standard deviation.</li>
-<li><code>timebodygyroscopestandarddeviationzaxis</code>: Z-axis standard deviation.</li>
-<li><code>timebodygyroscopemagnitudemean</code>: Mean of the magnitude of the movement.</li>
-<li><code>timebodygyroscopemagnitudestandarddeviation</code>: Standard deviation of the magnitude of the movement.</li>
+<li><code>timebodygyroscopemeanxaxis</code>: X-axis measurements in m/s^2.</li>
+<li><code>timebodygyroscopemeanyaxis</code>: Y-axis measurements in m/s^2.</li>
+<li><code>timebodygyroscopemeanzaxis</code>: Z-axis measurements in m/s^2.</li>
+<li><code>timebodygyroscopestandarddeviationxaxis</code>: X-axis standard deviation in m/s^2.</li>
+<li><code>timebodygyroscopestandarddeviationyaxis</code>: Y-axis standard deviation in m/s^2.</li>
+<li><code>timebodygyroscopestandarddeviationzaxis</code>: Z-axis standard deviation in m/s^2.</li>
+<li><code>timebodygyroscopemagnitudemean</code>: Mean of the magnitude of the movement in m/s^2.</li>
+<li><code>timebodygyroscopemagnitudestandarddeviation</code>: Standard deviation of the magnitude of the movement in m/s^2.</li>
 <li>Gyroscope jerk - Jerk, as defined above, relative to the orientation of the gyroscope:</li>
-<li><code>timebodygyroscopejerkmeanxaxis</code>: X-axis measurements.</li>
-<li><code>timebodygyroscopejerkmeanyaxis</code>: Y-axis measurements.</li>
-<li><code>timebodygyroscopejerkmeanzaxis</code>: Z-axis measurements.</li>
-<li><code>timebodygyroscopejerkstandarddeviationxaxis</code>: X-axis standard deviation.</li>
-<li><code>timebodygyroscopejerkstandarddeviationyaxis</code>: Y-axis standard deviation.</li>
-<li><code>timebodygyroscopejerkstandarddeviationzaxis</code>: Z-axis standard deviation.</li>
-<li><code>timebodygyroscopejerkmagnitudemean</code>: Mean of the magnitude of the movement.</li>
-<li><code>timebodygyroscopejerkmagnitudestandarddeviation</code>: Standard deviation of the magnitude of the movement.</li>
+<li><code>timebodygyroscopejerkmeanxaxis</code>: X-axis measurements in m/s^2.</li>
+<li><code>timebodygyroscopejerkmeanyaxis</code>: Y-axis measurements in m/s^2.</li>
+<li><code>timebodygyroscopejerkmeanzaxis</code>: Z-axis measurements in m/s^2.</li>
+<li><code>timebodygyroscopejerkstandarddeviationxaxis</code>: X-axis standard deviation in m/s^2.</li>
+<li><code>timebodygyroscopejerkstandarddeviationyaxis</code>: Y-axis standard deviation in m/s^2.</li>
+<li><code>timebodygyroscopejerkstandarddeviationzaxis</code>: Z-axis standard deviation in m/s^2.</li>
+<li><code>timebodygyroscopejerkmagnitudemean</code>: Mean of the magnitude of the movement in m/s^2.</li>
+<li><code>timebodygyroscopejerkmagnitudestandarddeviation</code>: Standard deviation of the magnitude of the movement in m/s^2.</li>
 <li>Frequency measurements - Measurements of 50 Hertz:</li>
 <li>Body acceleration - In classical mechanics, for a body with constant mass, the (vector) acceleration of the body’s center of mass is proportional to the net force vector (i.e., sum of all forces) acting on it (Newton’s second law):</li>
-<li><code>frequencybodyaccelerationmeanxaxis</code>: X-axis measurements.</li>
-<li><code>frequencybodyaccelerationmeanyaxis</code>: Y-axis measurements.</li>
-<li><code>frequencybodyaccelerationmeanzaxis</code>: Z-axis measurements.</li>
-<li><code>frequencybodyaccelerationstandarddeviationxaxis</code>: X-axis standard deviation.</li>
-<li><code>frequencybodyaccelerationstandarddeviationyaxis</code>: Y-axis standard deviation.</li>
-<li><code>frequencybodyaccelerationstandarddeviationzaxis</code>: Z-axis standard deviation.</li>
-<li><code>frequencybodyaccelerationweightedfrequencyaveragexaxis</code>: X-axis weighted average.</li>
-<li><code>frequencybodyaccelerationweightedfrequencyaverageyaxis</code>: Y-axis weighted average.</li>
-<li><code>frequencybodyaccelerationweightedfrequencyaveragezaxis</code>: Z-axis weighted average.</li>
+<li><code>frequencybodyaccelerationmeanxaxis</code>: X-axis measurements in m/s^2.</li>
+<li><code>frequencybodyaccelerationmeanyaxis</code>: Y-axis measurements in m/s^2.</li>
+<li><code>frequencybodyaccelerationmeanzaxis</code>: Z-axis measurements in m/s^2.</li>
+<li><code>frequencybodyaccelerationstandarddeviationxaxis</code>: X-axis standard deviation in m/s^2.</li>
+<li><code>frequencybodyaccelerationstandarddeviationyaxis</code>: Y-axis standard deviation in m/s^2.</li>
+<li><code>frequencybodyaccelerationstandarddeviationzaxis</code>: Z-axis standard deviation in m/s^2.</li>
+<li><code>frequencybodyaccelerationweightedfrequencyaveragexaxis</code>: X-axis weighted average in m/s^2.</li>
+<li><code>frequencybodyaccelerationweightedfrequencyaverageyaxis</code>: Y-axis weighted average in m/s^2.</li>
+<li><code>frequencybodyaccelerationweightedfrequencyaveragezaxis</code>: Z-axis weighted average in m/s^2.</li>
 <li>Body acceleration jerk mean - Jerk, as defined above, as relation to body acceleration, as defined above:</li>
-<li><code>frequencybodyaccelerationjerkmeanxaxis</code>: X-axis measurements.</li>
-<li><code>frequencybodyaccelerationjerkmeanyaxis</code>: Y-axis measurements.</li>
-<li><code>frequencybodyaccelerationjerkmeanzaxis</code>: Z-axis measurements.</li>
-<li><code>frequencybodyaccelerationjerkstandarddeviationxaxis</code>: X-axis standard deviation.</li>
-<li><code>frequencybodyaccelerationjerkstandarddeviationyaxis</code>: Y-axis standard deviation.</li>
-<li><code>frequencybodyaccelerationjerkstandarddeviationzaxis</code>: Z-axis standard deviation.</li>
-<li><code>frequencybodyaccelerationjerkweightedfrequencyaveragexaxis</code>: X-axis weighted average.</li>
-<li><code>frequencybodyaccelerationjerkweightedfrequencyaverageyaxis</code>: Y-axis weighted average.</li>
-<li><code>frequencybodyaccelerationjerkweightedfrequencyaveragezaxis</code>: Z-axis weighted average.</li>
+<li><code>frequencybodyaccelerationjerkmeanxaxis</code>: X-axis measurements in m/s^2.</li>
+<li><code>frequencybodyaccelerationjerkmeanyaxis</code>: Y-axis measurements in m/s^2.</li>
+<li><code>frequencybodyaccelerationjerkmeanzaxis</code>: Z-axis measurements in m/s^2.</li>
+<li><code>frequencybodyaccelerationjerkstandarddeviationxaxis</code>: X-axis standard deviation in m/s^2.</li>
+<li><code>frequencybodyaccelerationjerkstandarddeviationyaxis</code>: Y-axis standard deviation in m/s^2.</li>
+<li><code>frequencybodyaccelerationjerkstandarddeviationzaxis</code>: Z-axis standard deviation in m/s^2.</li>
+<li><code>frequencybodyaccelerationjerkweightedfrequencyaveragexaxis</code>: X-axis weighted average in m/s^2.</li>
+<li><code>frequencybodyaccelerationjerkweightedfrequencyaverageyaxis</code>: Y-axis weighted average in m/s^2.</li>
+<li><code>frequencybodyaccelerationjerkweightedfrequencyaveragezaxis</code>: Z-axis weighted average in m/s^2.</li>
 <li>Body gyroscope - The relation of body movement to the gyroscope position.:</li>
-<li><code>frequencybodygyroscopemeanxaxis</code>: X-axis measurements.</li>
-<li><code>frequencybodygyroscopemeanyaxis</code>: Y-axis measurements.</li>
-<li><code>frequencybodygyroscopemeanzaxis</code>: Z-axis measurements.</li>
-<li><code>frequencybodygyroscopestandarddeviationxaxis</code>: X-axis standard deviation.</li>
-<li><code>frequencybodygyroscopestandarddeviationyaxis</code>: Y-axis standard deviation.</li>
-<li><code>frequencybodygyroscopestandarddeviationzaxis</code>: Z-axis standard deviation.</li>
-<li><code>frequencybodygyroscopeweightedfrequencyaveragexaxis</code>: X-axis measurements.</li>
-<li><code>frequencybodygyroscopeweightedfrequencyaverageyaxis</code>: Y-axis measurements.</li>
-<li><code>frequencybodygyroscopeweightedfrequencyaveragezaxis</code>: Z-axis measurements.</li>
+<li><code>frequencybodygyroscopemeanxaxis</code>: X-axis measurements in m/s^2.</li>
+<li><code>frequencybodygyroscopemeanyaxis</code>: Y-axis measurements in m/s^2.</li>
+<li><code>frequencybodygyroscopemeanzaxis</code>: Z-axis measurements in m/s^2.</li>
+<li><code>frequencybodygyroscopestandarddeviationxaxis</code>: X-axis standard deviation in m/s^2.</li>
+<li><code>frequencybodygyroscopestandarddeviationyaxis</code>: Y-axis standard deviation in m/s^2.</li>
+<li><code>frequencybodygyroscopestandarddeviationzaxis</code>: Z-axis standard deviation in m/s^2.</li>
+<li><code>frequencybodygyroscopeweightedfrequencyaveragexaxis</code>: X-axis measurements in m/s^2.</li>
+<li><code>frequencybodygyroscopeweightedfrequencyaverageyaxis</code>: Y-axis measurements in m/s^2.</li>
+<li><code>frequencybodygyroscopeweightedfrequencyaveragezaxis</code>: Z-axis measurements in m/s^2.</li>
 <li>Body acceleration - Body acceleration, as defined above:</li>
-<li><code>frequencybodyaccelerationmagnitudemean</code>: Mean of acceleration magnitude.</li>
-<li><code>frequencybodyaccelerationmagnitudestandarddeviation</code>: Standard deviation of acceleration magnitude.</li>
-<li><code>frequencybodyaccelerationmagnitudeweightedfrequencyaverage</code>: Average weighted frequency.</li>
-<li><code>frequencybodybodyaccelerationjerkmagnitudemean</code>: Mean of jerk magnitude.</li>
-<li><code>frequencybodybodyaccelerationjerkmagnitudestandarddeviation</code>: Standard deviation of jerk magnitude.</li>
-<li><code>frequencybodybodyaccelerationjerkmagnitudeweightedfrequencyaverage</code>: Weighted average of jerk magnitude.</li>
+<li><code>frequencybodyaccelerationmagnitudemean</code>: Mean of acceleration magnitude in m/s^2.</li>
+<li><code>frequencybodyaccelerationmagnitudestandarddeviation</code>: Standard deviation of acceleration magnitude in m/s^2.</li>
+<li><code>frequencybodyaccelerationmagnitudeweightedfrequencyaverage</code>: Average weighted frequency in m/s^2.</li>
+<li><code>frequencybodybodyaccelerationjerkmagnitudemean</code>: Mean of jerk magnitude in m/s^2.</li>
+<li><code>frequencybodybodyaccelerationjerkmagnitudestandarddeviation</code>: Standard deviation of jerk magnitude in m/s^2.</li>
+<li><code>frequencybodybodyaccelerationjerkmagnitudeweightedfrequencyaverage</code>: Weighted average of jerk magnitude in m/s^2.</li>
 <li>Body gyroscope magnitude - The magnitude of the body movement in relation to the gyroscope:</li>
-<li><code>frequencybodybodygyroscopemagnitudemean</code>: Mean magnitude.</li>
-<li><code>frequencybodybodygyroscopemagnitudestandarddeviation</code>: Standard deviation of magnitude.</li>
-<li><code>frequencybodybodygyroscopemagnitudeweightedfrequencyaverage</code>: Weighted average.</li>
-<li><code>frequencybodybodygyroscopejerkmagnitudemean</code>: Mean jerk magnitude.</li>
-<li><code>frequencybodybodygyroscopejerkmagnitudestandarddeviation</code>: Standardard deviation of jerk.</li>
+<li><code>frequencybodybodygyroscopemagnitudemean</code>: Mean magnitude in m/s^2.</li>
+<li><code>frequencybodybodygyroscopemagnitudestandarddeviation</code>: Standard deviation of magnitude in m/s^2.</li>
+<li><code>frequencybodybodygyroscopemagnitudeweightedfrequencyaverage</code>: Weighted average in m/s^2.</li>
+<li><code>frequencybodybodygyroscopejerkmagnitudemean</code>: Mean jerk magnitude in m/s^2.</li>
+<li><code>frequencybodybodygyroscopejerkmagnitudestandarddeviation</code>: Standardard deviation of jerk in m/s^2.</li>
+<li>Other columns:</li>
+<li><code>activityid</code>: The numeric value of the activity being performed.</li>
+<li><code>subjectid</code>: The numeric id of the human subject performing the activity.</li>
+<li><code>activitylabel</code>: The human-readable label corresponding to <code>activityid</code></li>
 </ul>
 </div>
 </div>
