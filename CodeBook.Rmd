@@ -1,0 +1,98 @@
+## final.csv columns:
+
+Andriod accelerometer events are in units of meters per second squared (m/s^2).
+
+* Time measurements - Duration measurements:
++ Body acceleration - In classical mechanics, for a body with constant mass, the (vector) acceleration of the body's center of mass is proportional to the net force vector (i.e., sum of all forces) acting on it (Newton's second law):
+- `timebodyaccelerationmeanxaxis`: X-axis measurements in m/s^2.
+- `timebodyaccelerationmeanyaxis`: Y-axis measurements in m/s^2.
+- `timebodyaccelerationmeanzaxis`: Z-axis measurements in m/s^2.
+- `timebodyaccelerationstandarddeviationxaxis`: X-axis standard deviation in m/s^2.
+- `timebodyaccelerationstandarddeviationyaxis`: Y-axis standard deviation in m/s^2.
+- `timebodyaccelerationstandarddeviationzaxis`: Z-axis standard deviation in m/s^2.
+- `timebodyaccelerationmagnitudemean`: Mean of the magnitude of the movement in m/s^2.
+- `timebodyaccelerationmagnitudestandarddeviation`: Standard deviation of the magnitude of the movement in m/s^2.
++ Gravity acceleration - In physics, gravitational acceleration is the acceleration on an object caused by force of gravitation:
+- `timeGravityaccelerationmeanxaxis`: X-axis measurements in m/s^2.
+- `timeGravityaccelerationmeanyaxis`: Y-axis measurements in m/s^2.
+- `timeGravityaccelerationmeanzaxis`: Z-axis measurements in m/s^2.
+- `timeGravityaccelerationstandarddeviationxaxis`: X-axis standard deviation in m/s^2.
+- `timeGravityaccelerationstandarddeviationyaxis`: Y-axis standard deviation in m/s^2.
+- `timeGravityaccelerationstandarddeviationzaxis`: Z-axis standard deviation in m/s^2.
+- `timeGravityaccelerationmagnitudemean`: Mean of the magnitude of the movement in m/s^2.
+- `timeGravityaccelerationmagnitudestandarddeviation`: Standard deviation of the magnitude of the movement in m/s^2.
++ Jerk acceleration - In physics, jerk, also known as jolt, surge, or lurch, is the rate of change of acceleration:
+- `timebodyaccelerationjerkmeanxaxis`: X-axis measurements in m/s^2.
+- `timebodyaccelerationjerkmeanyaxis`: Y-axis measurements in m/s^2.
+- `timebodyaccelerationjerkmeanzaxis`: Z-axis measurements in m/s^2.
+- `timebodyaccelerationjerkstandarddeviationxaxis`: X-axis standard deviation in m/s^2.
+- `timebodyaccelerationjerkstandarddeviationyaxis`: Y-axis standard deviation in m/s^2.
+- `timebodyaccelerationjerkstandarddeviationzaxis`: Z-axis standard deviation in m/s^2.
+- `timebodyaccelerationjerkmagnitudemean`: Mean of the magnitude of the movement in m/s^2.
+- `timebodyaccelerationjerkmagnitudestandarddeviation`: Standard deviation of the magnitude of the movement in m/s^2.
++ Gyroscope - Orientation of the gyroscope as other actions are performed:
+- `timebodygyroscopemeanxaxis`: X-axis measurements in m/s^2.
+- `timebodygyroscopemeanyaxis`: Y-axis measurements in m/s^2.
+- `timebodygyroscopemeanzaxis`: Z-axis measurements in m/s^2.
+- `timebodygyroscopestandarddeviationxaxis`: X-axis standard deviation in m/s^2.
+- `timebodygyroscopestandarddeviationyaxis`: Y-axis standard deviation in m/s^2.
+- `timebodygyroscopestandarddeviationzaxis`: Z-axis standard deviation in m/s^2.
+- `timebodygyroscopemagnitudemean`: Mean of the magnitude of the movement in m/s^2.
+- `timebodygyroscopemagnitudestandarddeviation`: Standard deviation of the magnitude of the movement in m/s^2.
++ Gyroscope jerk - Jerk, as defined above, relative to the orientation of the gyroscope:
+- `timebodygyroscopejerkmeanxaxis`: X-axis measurements in m/s^2.
+- `timebodygyroscopejerkmeanyaxis`: Y-axis measurements in m/s^2.
+- `timebodygyroscopejerkmeanzaxis`: Z-axis measurements in m/s^2.
+- `timebodygyroscopejerkstandarddeviationxaxis`: X-axis standard deviation in m/s^2.
+- `timebodygyroscopejerkstandarddeviationyaxis`: Y-axis standard deviation in m/s^2.
+- `timebodygyroscopejerkstandarddeviationzaxis`: Z-axis standard deviation in m/s^2.
+- `timebodygyroscopejerkmagnitudemean`: Mean of the magnitude of the movement in m/s^2.
+- `timebodygyroscopejerkmagnitudestandarddeviation`: Standard deviation of the magnitude of the movement in m/s^2.
+* Frequency measurements - Measurements of 50 Hertz:
++ Body acceleration - In classical mechanics, for a body with constant mass, the (vector) acceleration of the body's center of mass is proportional to the net force vector (i.e., sum of all forces) acting on it (Newton's second law):
+- `frequencybodyaccelerationmeanxaxis`: X-axis measurements in m/s^2.
+- `frequencybodyaccelerationmeanyaxis`: Y-axis measurements in m/s^2.
+- `frequencybodyaccelerationmeanzaxis`: Z-axis measurements in m/s^2.
+- `frequencybodyaccelerationstandarddeviationxaxis`: X-axis standard deviation in m/s^2.
+- `frequencybodyaccelerationstandarddeviationyaxis`: Y-axis standard deviation in m/s^2.
+- `frequencybodyaccelerationstandarddeviationzaxis`: Z-axis standard deviation in m/s^2.
+- `frequencybodyaccelerationweightedfrequencyaveragexaxis`: X-axis weighted average in m/s^2.
+- `frequencybodyaccelerationweightedfrequencyaverageyaxis`: Y-axis weighted average in m/s^2.
+- `frequencybodyaccelerationweightedfrequencyaveragezaxis`: Z-axis weighted average in m/s^2.
++ Body acceleration jerk mean - Jerk, as defined above, as relation to body acceleration, as defined above:
+- `frequencybodyaccelerationjerkmeanxaxis`: X-axis measurements in m/s^2.
+- `frequencybodyaccelerationjerkmeanyaxis`: Y-axis measurements in m/s^2.
+- `frequencybodyaccelerationjerkmeanzaxis`: Z-axis measurements in m/s^2.
+- `frequencybodyaccelerationjerkstandarddeviationxaxis`: X-axis standard deviation in m/s^2.
+- `frequencybodyaccelerationjerkstandarddeviationyaxis`: Y-axis standard deviation in m/s^2.
+- `frequencybodyaccelerationjerkstandarddeviationzaxis`: Z-axis standard deviation in m/s^2.
+- `frequencybodyaccelerationjerkweightedfrequencyaveragexaxis`: X-axis weighted average in m/s^2.
+- `frequencybodyaccelerationjerkweightedfrequencyaverageyaxis`: Y-axis weighted average in m/s^2.
+- `frequencybodyaccelerationjerkweightedfrequencyaveragezaxis`: Z-axis weighted average in m/s^2.
++ Body gyroscope - The relation of body movement to the gyroscope position.:
+- `frequencybodygyroscopemeanxaxis`: X-axis measurements in m/s^2.
+- `frequencybodygyroscopemeanyaxis`: Y-axis measurements in m/s^2.
+- `frequencybodygyroscopemeanzaxis`: Z-axis measurements in m/s^2.
+- `frequencybodygyroscopestandarddeviationxaxis`: X-axis standard deviation in m/s^2.
+- `frequencybodygyroscopestandarddeviationyaxis`: Y-axis standard deviation in m/s^2.
+- `frequencybodygyroscopestandarddeviationzaxis`: Z-axis standard deviation in m/s^2.
+- `frequencybodygyroscopeweightedfrequencyaveragexaxis`: X-axis measurements in m/s^2.
+- `frequencybodygyroscopeweightedfrequencyaverageyaxis`: Y-axis measurements in m/s^2.
+- `frequencybodygyroscopeweightedfrequencyaveragezaxis`: Z-axis measurements in m/s^2.
++ Body acceleration - Body acceleration, as defined above:
+- `frequencybodyaccelerationmagnitudemean`: Mean of acceleration magnitude in m/s^2.
+- `frequencybodyaccelerationmagnitudestandarddeviation`: Standard deviation of acceleration magnitude in m/s^2.
+- `frequencybodyaccelerationmagnitudeweightedfrequencyaverage`: Average weighted frequency in m/s^2.
+- `frequencybodybodyaccelerationjerkmagnitudemean`: Mean of jerk magnitude in m/s^2.
+- `frequencybodybodyaccelerationjerkmagnitudestandarddeviation`: Standard deviation of jerk magnitude in m/s^2.
+- `frequencybodybodyaccelerationjerkmagnitudeweightedfrequencyaverage`: Weighted average of jerk magnitude in m/s^2.
++ Body gyroscope magnitude - The magnitude of the body movement in relation to the gyroscope:
+- `frequencybodybodygyroscopemagnitudemean`: Mean magnitude in m/s^2.
+- `frequencybodybodygyroscopemagnitudestandarddeviation`: Standard deviation of magnitude in m/s^2.
+- `frequencybodybodygyroscopemagnitudeweightedfrequencyaverage`: Weighted average in m/s^2.
+- `frequencybodybodygyroscopejerkmagnitudemean`: Mean jerk magnitude in m/s^2.
+- `frequencybodybodygyroscopejerkmagnitudestandarddeviation`: Standardard deviation of jerk in m/s^2.
++ Other columns:
+- `activityid`: The numeric value of the activity being performed.
+- `subjectid`: The numeric id of the human subject performing the activity.
+- `activitylabel`: The human-readable label corresponding to `activityid`
